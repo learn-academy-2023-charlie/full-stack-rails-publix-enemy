@@ -8,4 +8,14 @@ class BlogController < ApplicationController
         @blog = Blog.find(params[:id])  
     end
 
+    def new
+        @blog = Blog.new
+    end
+
+
+    private
+    def blog_params
+        params.require(:blog).permit(:post_titles, :content)
+    end
+
 end
