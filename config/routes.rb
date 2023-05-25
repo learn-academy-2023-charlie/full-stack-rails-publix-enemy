@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  root to: 'blog#index'
-  get '/post_titles' => 'blog#index'
-  get '/index' => 'blog#index'
   
+  get '/blogs' => 'blog#index'
+  get 'index' => 'blog#index'
+  root to: 'blog#index'
+
+  
+  
+
+  
+  get '/blogs/:id' => 'blog#show'
 end
